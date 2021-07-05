@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Peralta&display=swap');
+
+body {
+    background-image: url(../images/sheep-field.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: rgb(185, 220, 38);
+}
+
+.page-header {
+    font-family: 'Peralta', cursive;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+@media screen and (min-width: 425px) {
+    .page-header {
+        margin-top: 15vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h2 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .page-header {
+        margin-top: 27vh;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .page-header {
+        margin-top: 30vh;
+    }
+}
