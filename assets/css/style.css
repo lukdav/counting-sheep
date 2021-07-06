@@ -8,11 +8,56 @@ body {
     background-color: rgb(185, 220, 38);
 }
 
+/* ------------------------------------------------ Page Header */
+
 .page-header {
     font-family: 'Peralta', cursive;
     margin-top: 10vh;
     text-align: center;
 }
+
+/* ------------------------------------------------ Game Area */
+
+.game-area {
+    width: 95%;
+    max-width: 1300px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #A52A2A;
+    border-radius: 10%;
+}
+
+/* ------------------------------------------------ Scores Area */
+
+.scores-area {
+    font-family: 'Otomanopee One', sans-serif;
+    width: 95%;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+
+#timer-box {
+    font-family: 'Peralta', cursive;
+    height: 1.8rem;
+    width: 60px;
+    background-color: white;
+}
+
+.timer {
+    display: inline-block;
+}
+
+.guess {
+    display: inline-block;
+    float: right;
+}
+
+.guess-box {
+    width: 10px;
+}
+
+/* ------------------------------------------------ Media Queries */
 
 @media screen and (min-width: 425px) {
     .page-header {
