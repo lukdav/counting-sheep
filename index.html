@@ -26,11 +26,11 @@
         <div class="scores-area">
           <div class="timer-guess">
             <div class="timer">
-              <span>Time: </span>
+              <span class="d-none d-sm-inline-block">Time: </span>
               <span id="timer-box">2:00</span>
             </div>
             <div class="guess">
-              <span>Sheep: </span>
+              <span class="d-none d-sm-inline-block">Sheep: </span>
               <input id="guess-box" type="number">
               <button data-type="submit" class="btn btn-light">Submit</button>
             </div>
@@ -39,7 +39,8 @@
 
           </div>
           <div class="scores">
-
+            <p>Correct Answers: <span id="correct">0</span></p>
+		        <p>Incorrect Answers: <span id="incorrect">0</span></p>
           </div>
 
         </div>
