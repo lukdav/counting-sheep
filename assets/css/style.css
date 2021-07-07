@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&family=Peralta&display=swap');
 
 body {
-    background-image: url(../images/sheep-field.png);
+}
+
+/* ------------------------------------------------ Page Header */
+
+.spacer {
+    background-color: rgb(185, 220, 38);
+    width: 100%;
+    height: auto;
+}
+
+.game-field {
+    background-image: url(../images/sheep-field1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     background-color: rgb(185, 220, 38);
 }
 
-/* ------------------------------------------------ Page Header */
-
 .page-header {
     font-family: 'Peralta', cursive;
-    margin-top: 18vh;
     text-align: center;
 }
 
@@ -77,10 +85,6 @@ h2 {
 /* ------------------------------------------------ Media Queries */
 
 @media screen and (min-width: 425px) {
-    .page-header {
-        margin-top: 15vh;
-    }
-
     h2 {
         font-size: 2rem;
     }
@@ -101,17 +105,10 @@ h2 {
 }
 
 @media screen and (min-width: 1024px) {
-    .page-header {
-        margin-top: 27vh;
-    }
-
     .scores-area {
         width: 70%;
     }
 }
 
 @media screen and (min-width: 1440px) {
-    .page-header {
-        margin-top: 30vh;
-    }
 }
