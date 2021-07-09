@@ -17,12 +17,13 @@ submitButton.addEventListener("click", function() {
   
   function checkAnswer() {}
 
-  // Clear the game area, and add random number of sheep images.
+  // Get random number between 0 and x
 
   function getRandomNumber(x) {
     return Math.floor(Math.random)*(x)
   }
 
+// Clear game area and add random number of sheep.
 
 function setUpGameArea() {
   sheepContainer.innerHTML = "";
@@ -42,4 +43,26 @@ function setUpGameArea() {
 
 function generateSheepImage() {
   const sheepImage = document.createElement("img");
+
+  // Select a random sheep image.
+  let randomSheepIndex = getRandomNumber(sheepImages.length - 1);
+
+  // <img src=..>
+  sheepImage.setAttribute("src", sheepImages[randomSheepIndex]);
+
+  // <img src=.. alt="A sheep">
+  sheepImage.setAttribute("alt", "Sheep image");
+
+  let leftCoordinate = getRandomNumber(100);
+  let topCoordinate = getRandomNumber(100);
+
+  sheepImage.setAttribute(
+    "style",
+    `left: ${leftCoordinate}%;
+    top: ${topCoordinate}%;`
+  );
+
+  sheepContainer.appendChild(sheepImage);
 }
+
+
