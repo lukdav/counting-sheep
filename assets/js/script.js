@@ -1,53 +1,19 @@
-// Wait for DOM to finish loading before running the game.
-// Add event listeners to the buttons.
+const sheepContainer = document.querySelector("#sheep-container");
+const submitButton = document.querySelector("#submit");
 
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
+const sheepImages = [
+  "assets/images/green-sheep1.png",
+  "assets/images/green-sheep2.jpg",
+  "assets/images/green-sheep3.jpg"
+];
 
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
-                alert("You clicked Submit")
-            } else {
-                let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`);
-            }
-        });
-    }
-});
+const minSheep = 5;
+const maxSheep = 10;
 
-function runGame() {
-
-}
-
-function checkAnswer() {
-
-}
-
-function correctScore() {
-
-}
-
-function incorrectScore() {
-
-}
-
-function displaySheep() {
-
-}
-
-function startTimer() {
-
-}
-
-function endTimer() {
-
-}
-
-function addTime() {
-
-}
-
-function subtractTime() {
-
-}
+submitButton.addEventListener("click", function() {
+    checkAnswer();
+    setUpCanvas();
+  });
+  
+  function checkAnswer() {}
+  
