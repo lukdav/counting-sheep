@@ -1,5 +1,5 @@
-const sheepContainer = document.querySelector("#sheep-container");
-const submitButton = document.querySelector("#submit");
+const sheepContainer = document.getElementById("sheep-container");
+const submitButton = document.getElementById("submit");
 
 const sheepImages = [
   "assets/images/green-sheep1.png",

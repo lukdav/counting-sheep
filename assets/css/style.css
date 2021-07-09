@@ -44,7 +44,21 @@ h2 {
     margin-right: auto;
     border: 5px solid #A52A2A;
     border-radius: 10%;
+    background-color: rgb(185, 220, 38);
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
 }
+
+/* ------------------------------------------------ Sheep Images */
+
+  
+  .game-area img {
+    position: relative;
+    width: 30px;
+    height: auto;
+    margin: 10px;
+  }
 
 /* ------------------------------------------------ Welcome */
 
