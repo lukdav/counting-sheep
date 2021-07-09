@@ -1,5 +1,6 @@
 const sheepContainer = document.getElementById("sheep-container");
 const submitButton = document.getElementById("submit");
+const startButton = document.getElementById("start");
 
 const sheepImages = [
   "assets/images/green-sheep1.png",
@@ -8,7 +9,11 @@ const sheepImages = [
 ];
 
 const minSheep = 5;
-const maxSheep = 10;
+const maxSheep = 30;
+
+startButton.addEventListener("click", function() {
+  setUpGameArea();
+});
 
 submitButton.addEventListener("click", function() {
     checkAnswer();
@@ -20,7 +25,7 @@ submitButton.addEventListener("click", function() {
   // Get random number between 0 and x
 
   function getRandomNumber(x) {
-    return Math.floor(Math.random)*(x)
+    return Math.floor(Math.random() * x);
   }
 
 // Clear game area and add random number of sheep.
@@ -29,6 +34,7 @@ function setUpGameArea() {
   sheepContainer.innerHTML = "";
 
   let numSheep = getRandomNumber(maxSheep);
+  console.log(numSheep);
 
   while (numSheep < minSheep) {
     numSheep = getRandomNumber(maxSheep);
@@ -53,8 +59,8 @@ function generateSheepImage() {
   // <img src=.. alt="A sheep">
   sheepImage.setAttribute("alt", "Sheep image");
 
-  let leftCoordinate = getRandomNumber(100);
-  let topCoordinate = getRandomNumber(100);
+  let leftCoordinate = getRandomNumber(90);
+  let topCoordinate = getRandomNumber(90);
 
   sheepImage.setAttribute(
     "style",
@@ -64,5 +70,9 @@ function generateSheepImage() {
 
   sheepContainer.appendChild(sheepImage);
 }
+
+
+
+
 
 

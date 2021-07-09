@@ -54,9 +54,9 @@ h2 {
 
   
   .game-area img {
-    position: relative;
-    width: 30px;
-    height: auto;
+    position: absolute;
+    width: 50px;
+    height: 50px;
     margin: 10px;
   }
 
@@ -70,6 +70,7 @@ h2 {
 
 .welcome {
     width: 80%;
+    max-height: 80%;
     padding: 1rem;
     margin: auto;
     display: table-cell;
