@@ -12,8 +12,34 @@ const maxSheep = 10;
 
 submitButton.addEventListener("click", function() {
     checkAnswer();
-    setUpCanvas();
+    setUpGameArea();
   });
   
   function checkAnswer() {}
-  
+
+  // Clear the game area, and add random number of sheep images.
+
+  function getRandomNumber(x) {
+    return Math.floor(Math.random)*(x)
+  }
+
+
+function setUpGameArea() {
+  sheepContainer.innerHTML = "";
+
+  let numSheep = getRandomNumber(maxSheep);
+
+  while (numSheep < minSheep) {
+    numSheep = getRandomNumber(maxSheep);
+  }
+  for (let i = 0; i < numSheep; i++) {
+    generateSheepImage();
+  }
+}
+
+// Generate a sheep image with random coordinates (left, top)
+
+
+function generateSheepImage() {
+  const sheepImage = document.createElement("img");
+}
