@@ -10,6 +10,9 @@ const sheepImages = [
 
 const minSheep = 5;
 const maxSheep = 30;
+let numSheep = minSheep;
+let totalSheep = 0;
+let numIncorrect = 0;
 
 startButton.addEventListener("click", function() {
   setUpGameArea();
@@ -20,7 +23,6 @@ submitButton.addEventListener("click", function() {
     setUpGameArea();
   });
   
-  function checkAnswer() {}
 
   // Get random number between 0 and x
 
@@ -32,13 +34,16 @@ submitButton.addEventListener("click", function() {
 
 function setUpGameArea() {
   sheepContainer.innerHTML = "";
-
-  let numSheep = getRandomNumber(maxSheep);
-  console.log(numSheep);
+ console.log("Before generation: " + numSheep)
+  numSheep = getRandomNumber(maxSheep);
+  console.log("After generation: " + numSheep);
+  totalSheep += numSheep;
+  console.log(totalSheep);
 
   while (numSheep < minSheep) {
     numSheep = getRandomNumber(maxSheep);
   }
+
   for (let i = 0; i < numSheep; i++) {
     generateSheepImage();
   }
@@ -72,6 +77,39 @@ function generateSheepImage() {
 }
 
 
+
+// Check the user's answer against the randomly generated number of sheep.
+
+function checkAnswer() {
+
+  let userAnswer = parseInt(document.getElementById("answer-box").value);
+  console.log("CheckAnswer: " + numSheep);
+  let correctAnswer = userAnswer === numSheep;
+
+  if (correctAnswer) {
+    alert("Correct number of sheep");
+    correctScore();
+  } else {
+    alert("Wrong number of sheep");
+    incorrectScore(userAnswer - numSheep)
+  }
+
+}
+
+function correctScore() {
+  // Gets the current score from the DOM and increments it
+
+  document.getElementById("total").innerText = totalSheep;
+}
+
+function incorrectScore(incorrectBy) {
+  // Gets the current tally of incorrect answers from the DOM and increments it
+
+  numIncorrect += Math.abs(incorrectBy)
+
+  document.getElementById("incorrect").innerText = numIncorrect;
+  document.getElementById("total").innerText = totalSheep;
+}
 
 
 
