@@ -1,7 +1,6 @@
 const sheepContainer = document.getElementById("sheep-container");
 const submitButton = document.getElementById("submit");
 const startButton = document.getElementById("start");
-const restartButton = document.getElementById("restart");
 
 const sheepImages = [
   "assets/images/sheep1.png",
@@ -14,14 +13,10 @@ const minSheep = 5;
 const maxSheep = 30;
 let numSheep = minSheep;
 let totalSheep = 0;
-let numIncorrect = 0;
+let numIncorrect = 0
+let handle = "";
 
 startButton.addEventListener("click", function() {
-  startTimer();
-  setUpGameArea();
-});
-
-restartButton.addEventListener("click", function() {
   startTimer();
   setUpGameArea();
 });
@@ -30,6 +25,16 @@ submitButton.addEventListener("click", function() {
     checkAnswer();
     setUpGameArea();
   });
+
+  function restart() {
+    clearInterval(handle);
+    totalSheep = 0;
+    numIncorrect = 0;
+    document.querySelector('#timer-box').innerHTML = "";
+    console.log(document.querySelector('#timer-box').innerHTML)
+    startTimer();
+    setUpGameArea();
+  }
   
 
   // Get random number between 0 and x
@@ -64,7 +69,7 @@ function generateSheepImage() {
   const sheepImage = document.createElement("img");
 
   // Select a random sheep image.
-  let randomSheepIndex = getRandomNumber(sheepImages.length - 1);
+  let randomSheepIndex = getRandomNumber(sheepImages.length);
 
   // <img src=..>
   sheepImage.setAttribute("src", sheepImages[randomSheepIndex]);
@@ -72,8 +77,8 @@ function generateSheepImage() {
   // <img src=.. alt="A sheep">
   sheepImage.setAttribute("alt", "Sheep image");
 
-  let leftCoordinate = getRandomNumber(90);
-  let topCoordinate = getRandomNumber(90);
+  let leftCoordinate = getRandomNumber(88);
+  let topCoordinate = getRandomNumber(88);
 
   sheepImage.setAttribute(
     "style",
@@ -119,7 +124,7 @@ function incorrectScore(incorrectBy) {
 
 function runTimer(duration, display) {
   var timer = duration, minutes, seconds;
-  setInterval(function () {
+  handle = setInterval(function () {
       minutes = parseInt(timer / 60, 10);
       seconds = parseInt(timer % 60, 10);
 
@@ -136,9 +141,9 @@ function runTimer(duration, display) {
 }
 
 function startTimer() {
-    var twoMinutes = 60 * 2,
+    var oneMinute = 60 * 1,
       display = document.querySelector('#timer-box');
-      runTimer(twoMinutes, display);
+      runTimer(oneMinute, display);
   };
 
   function endGame() {
@@ -153,10 +158,9 @@ function startTimer() {
         <p>but there’s no time to rest!</p>
         <p>There’s always more sheep to count!</p>
         <br>
-        <button id="start" class="btn btn-light">Restart</button>
+        <button onclick="restart()" id="restart" class="btn btn-light">Restart</button>
       </div>
     </div>`;
-
   }
 
 
