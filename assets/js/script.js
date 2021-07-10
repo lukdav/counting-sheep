@@ -26,6 +26,13 @@ submitButton.addEventListener("click", function() {
     setUpGameArea();
   });
 
+  document.getElementById("answer-box").addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+        checkAnswer();
+        setUpGameArea();
+    }
+  });
+
   function restart() {
     clearInterval(handle);
     totalSheep = 0;
@@ -47,6 +54,9 @@ submitButton.addEventListener("click", function() {
 // Clear game area and add random number of sheep.
 
 function setUpGameArea() {
+  document.querySelector("#answer-box").value = "";
+  document.querySelector("#answer-box").focus();
+
   sheepContainer.innerHTML = "";
   console.log("Before generation: " + numSheep)
   numSheep = getRandomNumber(maxSheep);
