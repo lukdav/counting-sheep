@@ -1,4 +1,5 @@
 const sheepContainer = document.getElementById("sheep-container");
+const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const startButton = document.getElementById("start");
 
@@ -111,7 +112,7 @@ function checkAnswer() {
   let correctAnswer = userAnswer === numSheep;
 
   if (correctAnswer) {
-    alert("Correct number of sheep");
+    correctMessage();
     correctScore();
   } else {
     alert("Wrong number of sheep");
@@ -174,6 +175,17 @@ function startTimer() {
     </div>`;
   }
 
+  function correctMessage() { 
+    gameContainer.innerHTML =
+    `<div class="message-container container-fluid">
+      <div class="correct-message jumbotron text-center">
+        <p>Correct!</p>
+      </div>
+    </div>`
+  }
 
+
+
+ 
 
 
