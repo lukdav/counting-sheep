@@ -29,9 +29,10 @@ submitButton.addEventListener("click", function() {
   function restart() {
     clearInterval(handle);
     totalSheep = 0;
+    document.querySelector("#total").innerText = "0";
     numIncorrect = 0;
+    document.querySelector("#incorrect").innerText = "0";
     document.querySelector('#timer-box').innerHTML = "";
-    console.log(document.querySelector('#timer-box').innerHTML)
     startTimer();
     setUpGameArea();
   }
@@ -47,7 +48,7 @@ submitButton.addEventListener("click", function() {
 
 function setUpGameArea() {
   sheepContainer.innerHTML = "";
- console.log("Before generation: " + numSheep)
+  console.log("Before generation: " + numSheep)
   numSheep = getRandomNumber(maxSheep);
   console.log("After generation: " + numSheep);
   totalSheep += numSheep;
