@@ -34,6 +34,12 @@ h2 {
     font-size: 1.5rem;
 }
 
+.logo {
+    height: 40px;
+    margin-bottom: 12px;
+    margin-right: 3px;
+}
+
 /* ------------------------------------------------ Game Area */
 
 .game-area {
@@ -131,6 +137,12 @@ h2 {
     .scores-area {
         width: 80%;
     }
+
+    .logo {
+        height: 50px;
+        margin-bottom: 15px;
+        margin-right: 5px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -140,6 +152,12 @@ h2 {
 
     .scores-area {
         width: 75%;
+    }
+
+    .logo {
+        height: 90px;
+        margin-bottom: 26px;
+        margin-right: 6px;
     }
 }
 
