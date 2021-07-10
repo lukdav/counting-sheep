@@ -1,11 +1,13 @@
 const sheepContainer = document.getElementById("sheep-container");
 const submitButton = document.getElementById("submit");
 const startButton = document.getElementById("start");
+const restartButton = document.getElementById("restart");
 
 const sheepImages = [
-  "assets/images/green-sheep1.png",
-  "assets/images/green-sheep2.jpg",
-  "assets/images/green-sheep3.jpg"
+  "assets/images/sheep1.png",
+  "assets/images/sheep2.png",
+  "assets/images/sheep3.png",
+  "assets/images/sheep4.png"
 ];
 
 const minSheep = 5;
@@ -15,6 +17,11 @@ let totalSheep = 0;
 let numIncorrect = 0;
 
 startButton.addEventListener("click", function() {
+  startTimer();
+  setUpGameArea();
+});
+
+restartButton.addEventListener("click", function() {
   startTimer();
   setUpGameArea();
 });
@@ -122,7 +129,8 @@ function runTimer(duration, display) {
       display.innerText = minutes + ":" + seconds;
 
       if (--timer < 0) {
-          timer = duration;
+        display.innerText = "00:00";
+        endGame();
       }
   }, 1000);
 }
@@ -132,6 +140,24 @@ function startTimer() {
       display = document.querySelector('#timer-box');
       runTimer(twoMinutes, display);
   };
+
+  function endGame() {
+    sheepContainer.innerHTML = 
+    `<div class="end-container container-fluid">
+      <div class="end jumbotron text-center">
+        <h4>Times up!</h4>
+        <p>You correctly counted ${totalSheep} sheep!</p>
+        
+        <p>Well done!</p>
+        <p>That’s some going,</p>
+        <p>but there’s no time to rest!</p>
+        <p>There’s always more sheep to count!</p>
+        <br>
+        <button id="start" class="btn btn-light">Restart</button>
+      </div>
+    </div>`;
+
+  }
 
 
 
