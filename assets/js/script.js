@@ -196,21 +196,19 @@ function startTimer() {
   function correctMessage() { 
     let scoreMessage = document.getElementById("score-message");
     scoreMessage.innerHTML =
-    `<div class="correct-message jumbotron text-center">
+    `<div id="message" class="jumbotron text-center">
       <p>Correct!</p>
-    </div>`
+    </div>`;
+
+    $("#message").fadeOut(3000);
   }
 
   function incorrectMessage() { 
     let scoreMessage = document.getElementById("score-message");
     scoreMessage.innerHTML =
-    `<div class="correct-message jumbotron text-center">
+    `<div id="message" class="jumbotron text-center">
       <p>Wrong!</p>
-    </div>`
+    </div>`;
+
+    $("#message").fadeOut(3000);
   }
-
-
-
- 
-
-

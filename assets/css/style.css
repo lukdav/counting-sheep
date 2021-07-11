@@ -137,8 +137,13 @@ h2 {
     display: inline-block;
 }
 
-.correct-message {
+#message {
     padding: 0;
+    margin-bottom: 0px;
+}
+
+#message p {
+    margin-bottom: 0px;
 }
 
 /* ------------------------------------------------ Media Queries */
@@ -158,7 +163,7 @@ h2 {
     }
 
     #score-message {
-        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .logo {
@@ -178,7 +183,7 @@ h2 {
     }
 
     #score-message {
-        margin-left: 60px;
+        margin-right: 60px;
     }
 
     .logo {
@@ -194,12 +199,12 @@ h2 {
     }
 
     #score-message {
-        margin-left: 160px;
+        margin-right: 160px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     #score-message {
-        margin-left: 220px;
+        margin-right: 220px;
     }
 }
