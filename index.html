@@ -25,7 +25,7 @@
       <h2>C<img src="assets/images/sheep4.png" class="logo">UNTING SHEEP</h2>
     </div>
 
-    <div class="game-container">
+    <div id="game-container">
       <div id="sheep-container" class="game-area">
         <div class="welcome-container container-fluid">
           <div class="welcome jumbotron text-center">
@@ -36,7 +36,7 @@
             <p>You will get a point for each sheep you count correctly!</p>
             <p>But be careful, you will lose a point for every sheep incorrectly counted.</p>
             <br>
-            <button id="start" class="btn btn-light">Begin</button>
+            <button href="#game-view" id="start" class="btn btn-light">Begin</button>
           </div>
         </div>      
       </div>
@@ -48,10 +48,14 @@
           <span class="d-none d-sm-inline-block">Time: </span>
           <span id="timer-box">02:00</span>
         </div>
+        <div id="score-message">
+          
+        </div>
         <div class="guess">
           <span class="d-none d-sm-inline-block">Sheep: </span>
           <input id="answer-box" type="number" required>
           <button id="submit" class="btn btn-light">Submit</button>
+          
         </div>
 
 

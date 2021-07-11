@@ -18,7 +18,6 @@ let totalSheep = 0;
 let newScore = 0;
 let numIncorrect = 0
 let handle = "";
-let correct = 
 
 document.querySelector("#submit").setAttribute("disabled", true);
 document.querySelector("#answer-box").setAttribute("disabled", true);
@@ -62,9 +61,10 @@ submitButton.addEventListener("click", function() {
 
 function setUpGameArea() {
   document.querySelector("#submit").removeAttribute("disabled");
-  document.querySelector("#answer-box").removeAttribute("disabled");
-  document.querySelector("#answer-box").value = "";
-  document.querySelector("#answer-box").focus();
+  let answerBox = document.querySelector("#answer-box");
+  answerBox.removeAttribute("disabled");
+  answerBox.value = "";
+  answerBox.focus();
 
   sheepContainer.innerHTML = "";
   console.log("Before generation: " + numSheep)
@@ -72,6 +72,7 @@ function setUpGameArea() {
   console.log("After generation: " + numSheep);
   totalSheep += numSheep;
   console.log(totalSheep);
+
 
   while (numSheep < minSheep) {
     numSheep = getRandomNumber(maxSheep);
@@ -97,8 +98,8 @@ function generateSheepImage() {
   // <img src=.. alt="A sheep">
   sheepImage.setAttribute("alt", "Sheep image");
 
-  let leftCoordinate = getRandomNumber(88);
-  let topCoordinate = getRandomNumber(88);
+  let leftCoordinate = getRandomNumber(80);
+  let topCoordinate = getRandomNumber(80);
 
   sheepImage.setAttribute(
     "style",
@@ -120,9 +121,10 @@ function checkAnswer() {
   let correctAnswer = userAnswer === numSheep;
 
   if (correctAnswer) {
-    // correctMessage();
+    correctMessage();
     correctScore();
   } else {
+    incorrectMessage();
     incorrectScore(userAnswer - numSheep)
   }
 
@@ -191,14 +193,21 @@ function startTimer() {
     </div>`;
   }
 
-  // function correctMessage() { 
-  //   gameContainer.innerHTML =
-  //   `<div class="message-container container-fluid">
-  //     <div class="correct-message jumbotron text-center">
-  //       <p>Correct!</p>
-  //     </div>
-  //   </div>`
-  // }
+  function correctMessage() { 
+    let scoreMessage = document.getElementById("score-message");
+    scoreMessage.innerHTML =
+    `<div class="correct-message jumbotron text-center">
+      <p>Correct!</p>
+    </div>`
+  }
+
+  function incorrectMessage() { 
+    let scoreMessage = document.getElementById("score-message");
+    scoreMessage.innerHTML =
+    `<div class="correct-message jumbotron text-center">
+      <p>Wrong!</p>
+    </div>`
+  }
 
 
 

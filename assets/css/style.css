@@ -114,8 +114,13 @@ h2 {
 }
 
 #answer-box {
-    width: 85px;
+    width: 65px;
     height: 38px;
+}
+
+#submit {
+    width: 65px;
+    padding-left: 4px;
 }
 
 .scores {
@@ -128,6 +133,14 @@ h2 {
     padding-left: 30px;
 }
 
+#score-message {
+    display: inline-block;
+}
+
+.correct-message {
+    padding: 0;
+}
+
 /* ------------------------------------------------ Media Queries */
 
 @media screen and (min-width: 425px) {
@@ -137,6 +150,15 @@ h2 {
 
     .scores-area {
         width: 80%;
+    }
+
+    #submit {
+        width: 85px;
+        padding-left: 12px;
+    }
+
+    #score-message {
+        margin-left: 20px;
     }
 
     .logo {
@@ -155,6 +177,10 @@ h2 {
         width: 75%;
     }
 
+    #score-message {
+        margin-left: 60px;
+    }
+
     .logo {
         height: 90px;
         margin-bottom: 26px;
@@ -166,7 +192,14 @@ h2 {
     .scores-area {
         width: 70%;
     }
+
+    #score-message {
+        margin-left: 160px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
+    #score-message {
+        margin-left: 220px;
+    }
 }
