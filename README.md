@@ -137,33 +137,33 @@ Sign-up:
 - [jQuery Core 3.6.0](https://code.jquery.com/) was used to provide added efficiency to the JavaScript.
 - [DLPNG](https://dlpng.com) was used to get a png.
 - [subpng](https://www.subpng.com/) was also used to get some png images.
+- [W3C Markup Validation Service](https://validator.w3.org/) was used to test and check the HTML for errors.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test and check the CSS for errors.
+
 
 ---
 
 ## Testing
 
-1. W3C testing for the code.
-- Each page of the website was checked independently by copying  and then pasting its html code into the validator. The result often returned errors. Some were consistent across all pages and were easily rectified. Others however were more specific and difficult to correct. An example of such an occurrence was how the validator returned the error: "button must not appear as a descendant of the a element". This was rectified by styling the anchor element with the same class as the button to be used, but not using the button element.
-- Screenshots of the validator were taken after testing the code:
+1. W3C testing HTML.
+The game was checked by copying and then pasting its html code into the validator. The result often returned  3 errors: 
+
+- Two images were missing the alt attribute. The first as the background hills image and the second was the sheep logo image in the page header. This was resolved by adding alt attributes to the images.
+- Finally a href link was included in the button, and must be associated with an anchor element. The href link was to align the user's screen to the game area but had a bug making it offset and cut some of the game area off. This link was removed and the user must now manually align the screen. This will be further investigated as some users may need to be shown the answer-input.
+
+- A screenshot of the validator was taken after testing the code and resolving the issues:
 
 index.html
-![index.html](assets/validation/index.html.png)
-
-about.html
-![about.html](assets/validation/about.html.png)
-
-media.html
-![media.html](assets/validation/media.html.png)
-
-contact.html
-![contact.html](assets/validation/contact.html.png)
+![index.html](assets/testing/html-val.png)
 
 
 2. CSS testing
-- W3C CSS (Jigsaw) Validator was used to test for errors. The test found several small errors and were quickly corrected or deleted if surplus. The successful test result is shown in the following image:
+- W3C CSS (Jigsaw) Validator was used to test for errors. The test returned no errors:
 
 style.css
-![style.css](assets/validation/style.css.png)
+![style.css](assets/testing/css-val.png)
+
+3. JavaScript testing
 
 3. Lighthouse (Dev Tools)
 A report was conducted for a mobile device, and returned the following scores:
@@ -175,9 +175,9 @@ A report was conducted for a mobile device, and returned the following scores:
 There are many things that could be optimised, such as adding a "rel=noopener" to each link for security reasons. All advisories will be considered and acted upon if necessary.
 
 4. User Stories
-- The first user story is addressed as the website includes a list of upcoming gigs with a link to an external ticket site.
-- The second user story is addressed in the 'About' and 'Media' pages, which provide more information about the band and give examples of live performances for new fans to hear.
-- The final user story is fulfilled with the contact page. It provides a method of contacting the band and/or its management in order to begin the booking process.
+- The first user story is addressed as the game is simple, although it could be less complicated from a user's viewpoint regarding the scoring system.
+- The second user story is addressed as the game is colourful, fun and child friendly, while it would assist with counting and observational skills.
+- The final user story is fulfilled the game can be challenging as the user will be trying to beat their own scores and therefore always trying to improve.
 
 ## Individual Page Testing 
 
