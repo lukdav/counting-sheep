@@ -119,6 +119,9 @@ function checkAnswer() {
   let userAnswer = parseInt(document.getElementById("answer-box").value);
   console.log("CheckAnswer: " + numSheep);
   let correctAnswer = userAnswer === numSheep;
+  
+  // If NaN is given an an answer, it is replaced with a zero.
+  if (isNaN(userAnswer)) userAnswer = 0;
 
   if (correctAnswer) {
     correctMessage();
@@ -127,8 +130,8 @@ function checkAnswer() {
     incorrectMessage();
     incorrectScore(userAnswer - numSheep)
   }
-
 }
+
 
 function correctScore() {
   oldScore = parseInt(document.getElementById("correct").innerText);
@@ -161,6 +164,9 @@ function runTimer(duration, display) {
 
       display.innerText = minutes + ":" + seconds;
 
+      if (isNaN(minutes)) minutes = 0;
+      if (isNaN(seconds)) seconds = 0;
+
       if (--timer < 0) {
         display.innerText = "00:00";
         endGame();
@@ -171,9 +177,9 @@ function runTimer(duration, display) {
 }
 
 function startTimer() {
-    var oneMinute = 60 * 1,
+    var twoMinute = 60 * 2,
       display = document.querySelector('#timer-box');
-      runTimer(oneMinute, display);
+      runTimer(twoMinute, display);
   };
 
   function endGame() {

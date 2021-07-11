@@ -6,9 +6,9 @@ I will plan, code and implement a game:
 
 - The user either guesses or counts the number of sheep in each round (the number of sheep changes after every guess).
 
-- If the user is correct, five seconds is added to the timer.
+- If the user is correct, the number of sheep is added to the "Correct" score tally.
 
-- If the user is incorrect, one second is taken off the timer for each sheep the guess was incorrect by (e.g. if the user was incorrect by 4 sheep, 4 seconds is subtractred).
+- If the user is incorrect, the number of sheep the user is off by is added to the "Incorrect" score tally. The correct score is incremented by the amount of sheep there were in total minus the amount the user is off by (i.e. if the user guesses 4 more than were there in total, 4 are taken of the total). This method discourages high guesses to cheat the game.
 
 - When the timer reaches zero, the game is over and the users final score is given by the number of sheep correctly counted.
 
@@ -20,7 +20,7 @@ The website will have a target audience of both younger and older users.
 
 - Younger users may use the game to practice and improve counting and observation skills, in a fun, enjoyable and non-intimidating environment.
 
-- Older users will enjoy the challenging aspect of the game with an unlimited number of rounds available, restricted only by the timer; which can be extended through accuracy.
+- Older users will enjoy the challenging aspect of the game with an aim to get 100% score.
 
 #### User Stories
 
@@ -39,22 +39,16 @@ The game-page was first developed using a hand-drawn wireframe to assertain how 
 Following this, mockups of the game were constructed at various stages of the game-process:
 
 Landing/Welcome Page
-![Home Page - Top](assets/mockups/home-top.png)
+![Landing/Welcome Page](assets/mockups/mockup1.png)
 
-Home Page (Bottom)
-![Home Page - Bottom](assets/mockups/home-bottom.png)
+Game Start
+![Game Start](assets/mockups/mockup2.png)
 
-About Page (top)
-![About Page - Top](assets/mockups/about-top.png)
+Mid Game
+![Mid Game](assets/mockups/mockup3.png)
 
-About Page (Bottom)
-![About Page - Bottom](assets/mockups/about-bottom.png)
-
-Media Page (top)
-![Media Page - Top](assets/mockups/media-top.png)
-
-Media Page (Bottom)
-![Media Page - Bottom](assets/mockups/media-bottom.png)
+Game End
+![Game End](assets/mockups/mockup4.png)
 
 The decision to include a contact page (and form) was decided following the construction of the mockups. It was felt unnecessary to design a mockup for the contact page as it would use similar background and layouts.
 
@@ -90,24 +84,41 @@ The Sign Up button:
 
 ### Yet to be Implemented
 
-Sign up form/modal:
-- Will also be provided on smaller/mobile devices.
+Update Timer During Game Play
+- Addition/subtraction of a defined number of seconds on the timer with correct/incorrect answers.
+- This was originally the concept of the game as can be seen in the mockups. It was found to be difficult to implement but is believed to be possible with more time and futher investigation.
 
-A Member's page:
-- will provide exclusive content to users who have signed up.
-- such users will have to opportunity to prebook tickets for live performances. 
+Change Timer Duration
+- An option to change the timer's duration pre-game.
+
+Prevent Hidden Sheep
+- As the sheep are rendered with a position of absolute (to ensure random spread within the game area), some images are sometimes covered by others. Although complete coverage is rare, it will be investigated on how to prevent this occurring.
+
+Game Modes
+- Different game modes for different age groups or ability level - Easy, Medium and Hard game modes with an increasing number of sheep.
+
+Best Score List
+- A method of keeping track of the best scores.
+
+Share to social media:
+- A method of sharing either the user's score, or the game to social media.
+
+Sign-up:
+- User's could sign-up for exclusive content and game play benefits.
 
 ---
 
 ## Technologies Used
 - [Microsoft Word](https://www.microsoft.com/en-gb/microsoft-365/word) was used to construct the mockups as the ability to add text, shapes, pictures, colour and effects is useful in getting a detailed idea of layout.
 - [Gitpod](https://gitpod.io/) is used as an online IDE as a platform on which to code.
-- [Namecheap](https://www.namecheap.com/logo-maker/app/) was used to create the band's logo.
+- [Favicon.io](https://favicon.io/favicon-converter/) was used to create the favicon from a png.
 - [VS Code](https://code.visualstudio.com/) is used by Gitpod as it's IDE.
 - [Boostrap 4.5](https://getbootstrap.com/docs/4.5/getting-started/introduction/) was used for frameworks and general code templates.
 - HTML5 is a markup language and has been used to structure and present the content of the webpage.
 - CSS3 (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML.
-- [JavaScript](https://www.javascript.com/) is a high-level programming language and has been used to add a small amount of interactivity.
+- [JavaScript](https://www.javascript.com/) is a high-level programming language and has been used to add interactivity.
+- [jQuery Core 3.6.0](https://code.jquery.com/) was used to provide added efficiency to the JavaScript.
+
 
 ---
 
