@@ -139,6 +139,7 @@ Sign-up:
 - [subpng](https://www.subpng.com/) was also used to get some png images.
 - [W3C Markup Validation Service](https://validator.w3.org/) was used to test and check the HTML for errors.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test and check the CSS for errors.
+- [JSHint](https://jshint.com/) was used to check the JavaScript for errors.
 
 
 ---
@@ -163,8 +164,10 @@ index.html
 style.css
 ![style.css](testing/css-val.png)
 
+3. JavaScript Testing
+- JSHint was used to test the JavaScript code. No major errors were found, but revealed some syntax errors and unused variables which were corrected or deleted. 26 further warnings were returned, however these are all necessary JavaScript.
 
-3. Lighthouse (Dev Tools)
+4. Lighthouse (Dev Tools)
 A report was conducted for a mobile device, and returned the following scores:
 - Performance - 78%
 - Accessibility - 82%
@@ -173,10 +176,14 @@ A report was conducted for a mobile device, and returned the following scores:
 
 There are many things that could be optimised, the main one being adding appropriately sized images, which would significantly improve the load time. This and all suggestions will be considered for future improvements.
 
-4. User Stories
-- The first user story is addressed as the game is simple, although it could be less complicated from a user's viewpoint regarding the scoring system.
-- The second user story is addressed as the game is colourful, fun and child friendly, while it would assist with counting and observational skills.
-- The final user story is fulfilled the game can be challenging as the user will be trying to beat their own scores and therefore always trying to improve.
+5. User Stories
+- The first user story is addressed as the game is simple, although it could be less complicated from a user's viewpoint regarding the scoring system. As seen in the image of the landing page below:
+![landing-page](testing/landing-page.png)
+- The second user story is addressed as the game is colourful, fun and child friendly, while it would assist with counting and observational skills. This is shown in the following screenshots taken mid game:
+![mid-game1](testing/mid-game1.png)
+![mid-game2](testing/mid-game2.png)
+- The final user story is fulfilled the game can be challenging as the user will be trying to beat their own scores and therefore always trying to improve. This is shown in the screenshot of the end game message below:
+![end-game](testing/end-game.png)
 
 ## Individual Page Testing 
 
@@ -219,6 +226,7 @@ Restart:
 - Ensure a random number of sheep are rendered at random positions within the game-area.
 - The Mid game testing process can then be conducted again to ensure smooth operation.
 
+All testing procedures stated were then also carried out on the deployed version of the game. The deployed version can be found using the method in the Deployment section.
 ---
 
 ## Bugs

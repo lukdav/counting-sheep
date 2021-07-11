@@ -1,5 +1,4 @@
 const sheepContainer = document.getElementById("sheep-container");
-const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const startButton = document.getElementById("start");
 
@@ -18,7 +17,7 @@ let numSheep = minSheep;
 let oldScore = 0;
 let totalSheep = 0;
 let newScore = 0;
-let numIncorrect = 0
+let numIncorrect = 0;
 let handle = "";
 
 // Initially the answer-box input and submit button are disabled.
@@ -72,7 +71,7 @@ function setUpGameArea() {
   answerBox.focus();
 
   sheepContainer.innerHTML = "";
-  console.log("Before generation: " + numSheep)
+  console.log("Before generation: " + numSheep);
   numSheep = getRandomNumber(maxSheep);
   console.log("After generation: " + numSheep);
   totalSheep += numSheep;
@@ -133,7 +132,7 @@ function checkAnswer() {
     correctScore();
   } else {
     incorrectMessage();
-    incorrectScore(userAnswer - numSheep)
+    incorrectScore(userAnswer - numSheep);
   }
 }
 
@@ -145,7 +144,7 @@ function correctScore() {
 
 // Calculate and display incorrect score value.
 function incorrectScore(incorrectBy) {
-  numIncorrect += Math.abs(incorrectBy)
+  numIncorrect += Math.abs(incorrectBy);
 
   document.getElementById("incorrect").innerText = numIncorrect;
 
@@ -190,7 +189,7 @@ function startTimer() {
     var twoMinute = 60 * 2,
       display = document.querySelector('#timer-box');
       runTimer(twoMinute, display);
-  };
+  }
 
   // To show the end game message
 

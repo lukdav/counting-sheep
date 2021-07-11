@@ -58,7 +58,6 @@ h2 {
 
 /* ------------------------------------------------ Sheep Images */
 
-  
   .game-area img {
     position: absolute;
     width: 50px;
@@ -111,7 +110,6 @@ h2 {
 .guess {
     float: right;
 }
-
 
 .guess button {
     margin-bottom: 5px;
