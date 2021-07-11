@@ -180,46 +180,44 @@ There are many things that could be optimised, such as adding a "rel=noopener" t
 
 ## Individual Page Testing 
 
-Navigation & Footer:
-- Ensure all navigation links load to the correct pages, including the home link connected to the band's logo.
-- Test each link in the footer to ensure it takes the user to the correct internal or external page (About, Download & Social Media links).
-- Resize the screen to ensure the nav bar collapses to a button on smaller devices and the 'Sign UP' button also disappears.
-- Resize the screen to ensure the 'About' section of the footer disappears on smaller devices.
+Welcome/Landing Screen:
+- Ensure the layout, welcome message and images render correctly.
+- Ensure the timer is frozen to "02:00".
+- Ensure the answer-input and submit button is disabled.
+- Ensure the correct and incorrect scores are set to zero.
+- Resize the screen to ensure page heading resizes accordingly.
+- Resize the screen to ensure the "Time" and "Sheep" labels are hidden on smaller devices while the layout remains clear and intuitive.
+- Ensure the start("Begin") button takes the user in to the start game process.
 
-Home Page:
-- Go to the "Home" page.
-- Resize the screen to ensure the background of the 'Welcome' section is structured correctly at various sizes. 
-- Click on the links of the 'New Album' to ensure the correct page is loaded.
-- Resize the screen to ensure the layout of the reviews changes as required for various screen sizes.
-- Click the 'Full Review' links to check the correct page is loaded.
-- Resize the screen to ensure the 'Location column' of the tour table disappears at smaller screen sizes.
-- Click each 'Tickets' link to ensure the user is taken to the correct site.
+Start game:
+- Ensure the timer starts the countdown.
+- Ensure the answer-input and submit button is activated.
+- Ensure the welcome message dissappears.
+- Ensure a random number of sheep are rendered at random positions within the game-area.
+- Resize the screen to ensure that the sheep images are rendered clearly at all sizes.
 
-About Page:
-- Go to the "About" page.
-- Resize the screen to ensure the layout of the 'Origins' section changes accordingly between in-line and vertical placement.
-- Click the 'here' link (for tickets) to ensure the user is taken to the correct destination.
-- Resize the screen to check the layout of 'The Band' section changes as required; structured vertically on small devices, vertical 4x4 on medium devices and inline 4x4 on larger devices.
+Mid game:
+- Ensure the timer is working properly.
+- Ensure a answer-input and submit button work properly.
+- Ensure a correct or incorrect answer is confirmed accordingly.
+- Ensure a correct answer increments the correct score value.
+- Ensure an incorrect answer increments the incorrect score value, and the offset value is incremented on the correct score value.
+- Ensure the appropriate "Correct!" or "Wrong!" message appears according to the user's answer and that it fades out after 3 seconds.
+- Click the submit button to check that the game area is cleared and a new random number of sheep images are rendered in new randomised positions.
 
-Media Page:
-- Go to the "Media" page.
-- Resize screen to ensure the photograph's layout changes according to screen size; 1 column for extra small screens, 2 colums for small screens, 3 columns for medium screens and 4 columns for large screens.
-- Test the videos load correctly and work as intended in the browser, including links to the original video.
+End Game:
+- Ensure the timer stops at "00:00".
+- Ensure the answer-input and submit button is disabled.
+- Ensure game area is cleared and the end game message appears.
+- Ensure the end game message gives the user their final score, from a possible maximum score, which matches the calculated scores at the bottom.
+- Check the restart button begins the game again.
 
-Contact Page:
-- Go to the "Contact" page.
-- Try to submit the empty form and verify that an error message about the required fields appears.
-- Try to submit the form with an invalid email address and verify that a relevant error message appears.
-- Try to submit the form with all inputs valid and verify that a success message appears.
-
-Modal:
-- Click on the 'Sign Up' button to ensure the modal appears.
-- Try to submit the empty form and verify that an error message about the required fields appears.
-- Try to submit the form with an invalid email address and verify that a relevant error message appears.
-- Try to submit the form with an incorrect repeated password and verify that a relevant error message appears.
-- Try to submit the form with all inputs valid and verify that a success message appears.
-
-Please note, the modal still requires verification for 'repeated password' to be addressed. This will require javascript to confirm password inputs match.
+Restart:
+- Ensure the timer starts the countdown from "02:00".
+- Ensure the answer-input and submit button is activated.
+- Ensure the end game message dissappears.
+- Ensure a random number of sheep are rendered at random positions within the game-area.
+- The Mid game testing process can then be conducted again to ensure smooth operation.
 
 ---
 
