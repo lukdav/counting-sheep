@@ -3,6 +3,7 @@ const gameContainer = document.getElementById("game-container");
 const submitButton = document.getElementById("submit");
 const startButton = document.getElementById("start");
 
+// Sheep images.
 const sheepImages = [
   "assets/images/sheep1.png",
   "assets/images/sheep2.png",
@@ -10,6 +11,7 @@ const sheepImages = [
   "assets/images/sheep4.png"
 ];
 
+// Required global variables
 const minSheep = 5;
 const maxSheep = 30;
 let numSheep = minSheep;
@@ -19,9 +21,11 @@ let newScore = 0;
 let numIncorrect = 0
 let handle = "";
 
+// Initially the answer-box input and submit button are disabled.
 document.querySelector("#submit").setAttribute("disabled", true);
 document.querySelector("#answer-box").setAttribute("disabled", true);
 
+// Event listeners for start and submit.
 startButton.addEventListener("click", function() {
   startTimer();
   setUpGameArea();
@@ -39,6 +43,7 @@ submitButton.addEventListener("click", function() {
     }
   });
 
+  // To restart the game following the game end.
   function restart() {
     clearInterval(handle);
     totalSheep = 0;
@@ -83,7 +88,7 @@ function setUpGameArea() {
   }
 }
 
-// Generate a sheep image with random coordinates (left, top)
+// Generate a sheep image with random coordinates (left, top) in the game area.
 
 
 function generateSheepImage() {
@@ -132,12 +137,13 @@ function checkAnswer() {
   }
 }
 
-
+// Calculate and display correct score value.
 function correctScore() {
   oldScore = parseInt(document.getElementById("correct").innerText);
   document.getElementById("correct").innerText = numSheep + oldScore;
 }
 
+// Calculate and display incorrect score value.
 function incorrectScore(incorrectBy) {
   numIncorrect += Math.abs(incorrectBy)
 
@@ -152,6 +158,10 @@ function incorrectScore(incorrectBy) {
     document.getElementById("correct").innerText = 0;
   }
 }
+
+
+// Timer code borrwed from stack overflow website (see README.md file)
+// Edited for specific use on this game.
 
 function runTimer(duration, display) {
   var timer = duration, minutes, seconds;
@@ -182,6 +192,8 @@ function startTimer() {
       runTimer(twoMinute, display);
   };
 
+  // To show the end game message
+
   function endGame() {
     sheepContainer.innerHTML = 
     `<div class="end-container container-fluid">
@@ -198,6 +210,9 @@ function startTimer() {
       </div>
     </div>`;
   }
+
+
+  // Correct and Incorrect messages appear and disappear accordingly.
 
   function correctMessage() { 
     let scoreMessage = document.getElementById("score-message");

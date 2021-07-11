@@ -39,16 +39,16 @@ The game-page was first developed using a hand-drawn wireframe to assertain how 
 Following this, mockups of the game were constructed at various stages of the game-process:
 
 Landing/Welcome Page
-![Landing/Welcome Page](assets/mockups/mockup1.png)
+![Landing/Welcome Page](mockups/mockup1.png)
 
 Game Start
-![Game Start](assets/mockups/mockup2.png)
+![Game Start](mockups/mockup2.png)
 
 Mid Game
-![Mid Game](assets/mockups/mockup3.png)
+![Mid Game](mockups/mockup3.png)
 
 Game End
-![Game End](assets/mockups/mockup4.png)
+![Game End](mockups/mockup4.png)
 
 
 ---
@@ -154,14 +154,14 @@ The game was checked by copying and then pasting its html code into the validato
 - A screenshot of the validator was taken after testing the code and resolving the issues:
 
 index.html
-![index.html](assets/testing/html-val.png)
+![index.html](testing/html-val.png)
 
 
 2. CSS testing
 - W3C CSS (Jigsaw) Validator was used to test for errors. The test returned no errors:
 
 style.css
-![style.css](assets/testing/css-val.png)
+![style.css](testing/css-val.png)
 
 
 3. Lighthouse (Dev Tools)
@@ -267,26 +267,53 @@ Further reading and troubleshooting on cloning a repository can be found [here](
 
 ## Credits
 
-#### Media
-As this is a fictional band's website, all images and videos on this site are of various different bands.
-The photos used in this site were obtained using a Google 'free image search' (under a creative commons licence) and can be found at the following links:
-- [band1](https://en.wikipedia.org/wiki/File:American_Hard_Rock_band,_Alpha_Centauri,_2012.jpg)
-- [band2](https://commons.wikimedia.org/wiki/File:Archim%C3%A8de_rock_band.jpg)
-- [band3](https://www.flickr.com/photos/tshrinivasan/20752903484)
-- [band4](https://www.flickr.com/photos/61229509@N03/8902401971/)
-- [band5](https://www.flickr.com/photos/marlambie/4297386089)
-- [band6](https://www.flickr.com/photos/arcticproductions/14466886168/)
+The code for the timer was found on the [Stackoverflow](https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript) website at the link and was edited for specific use on this site. The original code is as follows:
 
-- [gig1](https://commons.wikimedia.org/wiki/File:Rock_concert_in_black_and_white_(Unsplash).jpg)
-- [gig2](https://pixabay.com/photos/guitar-guitar-player-guitarist-man-5487605/)
-- [gig3](https://pixabay.com/photos/concert-music-lz7-maatan%C3%A4kyviss%C3%A4-706016/)
-- [gig4](https://pixabay.com/photos/gig-concert-show-music-event-3518406/)
-- [gig5](https://www.flickr.com/photos/frf_kmeron/3587036145) 
-- [gig6](https://commons.wikimedia.org/wiki/File:Stereophonics_gig_O2_Arena_2013_MMB_15.jpg)
-- [gig7](https://commons.wikimedia.org/wiki/File:Lake_Malawi_music_band.jpg)
-- [gig8](https://commons.wikimedia.org/wiki/File:Nj_06_band.jpg)
+``` 
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+}; 
+```
+
+```
+<body>
+    <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+</body>
+```
+
+
+
+#### Media
+The photos used in this site were obtained using a Google 'free image search' (under a creative commons licence) and can be found at the following links:
+- [sheep1](https://www.subpng.com/png-pk930m/download.html)
+- [sheep2](https://dlpng.com/png/6991256)
+- [sheep3](https://www.subpng.com/png-nt7mbf/download.html)
+- [sheep4](https://www.subpng.com/png-20ccij/)
+
+- [background](https://www.vecteezy.com/vector-art/413580-a-beautiful-green-landscape)
+
+The landscape background was free but required attribution and so a link was placed at the bottom of the screen.
 
 ---
 
 ## Acknowledgements
-I received inspiration for this project from the [Serenity](https://www.serenity-band.com/) band's website.
+I received inspiration for this project from a number of free games available as apps.

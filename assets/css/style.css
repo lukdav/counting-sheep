@@ -15,16 +15,6 @@ html {
     height: auto;
 }
 
-.game-field {
-    background-image: url(../images/sheep-field1.png);
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-color: rgb(185, 220, 38);
-}
-
 .page-header {
     font-family: 'Peralta', cursive;
     text-align: center;
@@ -54,6 +44,16 @@ h2 {
     display: flex;
     position: relative;
     flex-wrap: wrap;
+}
+
+.game-field {
+    background-image: url(../images/sheep-field1.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: rgb(185, 220, 38);
 }
 
 /* ------------------------------------------------ Sheep Images */
@@ -94,6 +94,8 @@ h2 {
     margin-top: 10px;
 }
 
+/* ------------------------------------------------ Timer */
+
 #timer-box {
     font-family: 'Peralta', cursive;
     font-size: 1.5rem;
@@ -103,6 +105,8 @@ h2 {
 .timer {
     display: inline-block;
 }
+
+/* ------------------------------------------------ Answer */
 
 .guess {
     float: right;
@@ -123,6 +127,8 @@ h2 {
     padding-left: 4px;
 }
 
+/* ------------------------------------------------ Scores */
+
 .scores {
     margin-top: 30px;
     text-align: center;
@@ -132,6 +138,8 @@ h2 {
     display: inline-block;
     padding-left: 30px;
 }
+
+/* ------------------------------------------------ Scores message */
 
 #score-message {
     display: inline-block;
@@ -144,6 +152,14 @@ h2 {
 
 #message p {
     margin-bottom: 0px;
+}
+
+/* ------------------------------------------------ Attribution link */
+
+.image-link {
+    color: black;
+    background-color: rgb(185, 220, 38);
+    bottom: 0px;
 }
 
 /* ------------------------------------------------ Media Queries */

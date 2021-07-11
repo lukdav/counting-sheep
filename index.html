@@ -13,18 +13,21 @@
 </head>
 
 <body>
+  <!-- Hills background. -->
   <div>
     <img class="spacer" src="assets/images/sheep-hills.png" alt="Hills background.">
   </div>
 
   <div class="game-field">
-
+    <!-- Page header -->
     <div class="page-header">
       <h2>C<img src="assets/images/sheep4.png" class="logo" alt="Sheep logo.">UNTING SHEEP</h2>
     </div>
 
     <div id="game-container">
+      <!-- Game area -->
       <div id="sheep-container" class="game-area">
+        <!-- Welcome message -->
         <div class="welcome-container container-fluid">
           <div class="welcome jumbotron text-center">
             <h4>Welcome to Lethargy Farm!</h4>
@@ -40,30 +43,35 @@
       </div>
     </div>
 
+    
     <div class="scores-area">
+      <!-- Timer -->
       <div class="timer-guess">
         <div class="timer">
           <span class="d-none d-sm-inline-block">Time: </span>
           <span id="timer-box">02:00</span>
         </div>
+        <!-- Answer -->
         <div class="guess">
           <div id="score-message"></div>
           <span class="d-none d-sm-inline-block">Sheep: </span>
           <input id="answer-box" type="number" required>
           <button id="submit" class="btn btn-light">Submit</button>
-          
         </div>
-
-
-
       </div>
+
+      <!-- Scores -->
       <div class="scores">
         <p>Correct: <span id="correct">0</span></p>
         <p>Incorrect: <span id="incorrect">0</span></p>
       </div>
-
     </div>
+
+    <!-- Attribution link -->
+    <a class="image-link" href="https://www.vecteezy.com/free-vector/cartoon-landscape">Cartoon Landscape Vectors by Vecteezy</a>
   </div>
+
+  
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
