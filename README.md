@@ -50,7 +50,6 @@ Mid Game
 Game End
 ![Game End](assets/mockups/mockup4.png)
 
-The decision to include a contact page (and form) was decided following the construction of the mockups. It was felt unnecessary to design a mockup for the contact page as it would use similar background and layouts.
 
 ---
 
@@ -115,7 +114,7 @@ Sign-up:
 - [VS Code](https://code.visualstudio.com/) is used by Gitpod as it's IDE.
 - [Boostrap 4.5](https://getbootstrap.com/docs/4.5/getting-started/introduction/) was used for frameworks and general code templates.
 - HTML5 is a markup language and has been used to structure and present the content of the webpage.
-- CSS3 (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML.
+- CSS3 (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML
 - [JavaScript](https://www.javascript.com/) is a high-level programming language and has been used to add interactivity.
 - [jQuery Core 3.6.0](https://code.jquery.com/) was used to provide added efficiency to the JavaScript.
 
