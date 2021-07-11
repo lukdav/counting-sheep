@@ -21,6 +21,7 @@ let handle = "";
 let correct = 
 
 document.querySelector("#submit").setAttribute("disabled", true);
+document.querySelector("#answer-box").setAttribute("disabled", true);
 
 startButton.addEventListener("click", function() {
   startTimer();
@@ -60,7 +61,8 @@ submitButton.addEventListener("click", function() {
 // Clear game area and add random number of sheep.
 
 function setUpGameArea() {
-  document.querySelector("#submit").removeAttribute("disabled")
+  document.querySelector("#submit").removeAttribute("disabled");
+  document.querySelector("#answer-box").removeAttribute("disabled");
   document.querySelector("#answer-box").value = "";
   document.querySelector("#answer-box").focus();
 
@@ -140,6 +142,10 @@ function incorrectScore(incorrectBy) {
 
   oldScore = parseInt(document.getElementById("correct").innerText);
   document.getElementById("correct").innerText = oldScore + newScore;
+
+  if ((oldScore + newScore) < 0) {
+    document.getElementById("correct").innerText = 0;
+  }
 }
 
 function runTimer(duration, display) {
@@ -157,6 +163,7 @@ function runTimer(duration, display) {
         display.innerText = "00:00";
         endGame();
         document.querySelector("#submit").setAttribute("disabled", true);
+        document.querySelector("#answer-box").setAttribute("disabled", true);
       }
   }, 1000);
 }
