@@ -166,12 +166,12 @@ style.css
 
 3. Lighthouse (Dev Tools)
 A report was conducted for a mobile device, and returned the following scores:
-- Performance - 77%
-- Accessibility - 93%
-- Best Practices - 80%
-- SEO - 89%
+- Performance - 78%
+- Accessibility - 82%
+- Best Practices - 87%
+- SEO - 92%
 
-There are many things that could be optimised, such as adding a "rel=noopener" to each link for security reasons. All advisories will be considered and acted upon if necessary.
+There are many things that could be optimised, the main one being adding appropriately sized images, which would significantly improve the load time. This and all suggestions will be considered for future improvements.
 
 4. User Stories
 - The first user story is addressed as the game is simple, although it could be less complicated from a user's viewpoint regarding the scoring system.
@@ -225,6 +225,7 @@ Restart:
 
 - The sheep are often rendered behind/in-front of each other. On smaller screens this can be an issue.
 - The href atribute initially put on the start button to align the users screen with the game-area would not align to the section proposed but to the bottom of the screen. Even though an error was revealed as the href must be on an anchor element, this could have been altered, however the href attribute was removed due to the screen viewpoint moving to the bottom, cutting off some of the game area on smaller devices.
+- The jumbotrons are not as small as I'd like and an attempt to resize them will be made.
 
 ## Deployment
 
