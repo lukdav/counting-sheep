@@ -13,9 +13,14 @@ const sheepImages = [
 const minSheep = 5;
 const maxSheep = 30;
 let numSheep = minSheep;
+let oldScore = 0;
 let totalSheep = 0;
+let newScore = 0;
 let numIncorrect = 0
 let handle = "";
+let correct = 
+
+document.querySelector("#submit").setAttribute("disabled", true);
 
 startButton.addEventListener("click", function() {
   startTimer();
@@ -37,7 +42,7 @@ submitButton.addEventListener("click", function() {
   function restart() {
     clearInterval(handle);
     totalSheep = 0;
-    document.querySelector("#total").innerText = "0";
+    document.querySelector("#correct").innerText = "0";
     numIncorrect = 0;
     document.querySelector("#incorrect").innerText = "0";
     document.querySelector('#timer-box').innerHTML = "";
@@ -55,6 +60,7 @@ submitButton.addEventListener("click", function() {
 // Clear game area and add random number of sheep.
 
 function setUpGameArea() {
+  document.querySelector("#submit").removeAttribute("disabled")
   document.querySelector("#answer-box").value = "";
   document.querySelector("#answer-box").focus();
 
@@ -112,26 +118,28 @@ function checkAnswer() {
   let correctAnswer = userAnswer === numSheep;
 
   if (correctAnswer) {
-    correctMessage();
+    // correctMessage();
     correctScore();
   } else {
-    alert("Wrong number of sheep");
     incorrectScore(userAnswer - numSheep)
   }
 
 }
 
 function correctScore() {
-
-  document.getElementById("total").innerText = totalSheep;
+  oldScore = parseInt(document.getElementById("correct").innerText);
+  document.getElementById("correct").innerText = numSheep + oldScore;
 }
 
 function incorrectScore(incorrectBy) {
-
   numIncorrect += Math.abs(incorrectBy)
 
   document.getElementById("incorrect").innerText = numIncorrect;
-  document.getElementById("total").innerText = totalSheep;
+
+  newScore = numSheep - numIncorrect;
+
+  oldScore = parseInt(document.getElementById("correct").innerText);
+  document.getElementById("correct").innerText = oldScore + newScore;
 }
 
 function runTimer(duration, display) {
@@ -148,6 +156,7 @@ function runTimer(duration, display) {
       if (--timer < 0) {
         display.innerText = "00:00";
         endGame();
+        document.querySelector("#submit").setAttribute("disabled", true);
       }
   }, 1000);
 }
@@ -163,8 +172,8 @@ function startTimer() {
     `<div class="end-container container-fluid">
       <div class="end jumbotron text-center">
         <h4>Times up!</h4>
-        <p>You correctly counted ${totalSheep} sheep!</p>
-        
+        <p>You correctly counted ${document.getElementById("correct").innerText} sheep</p>
+        <p>from a total of ${(parseInt(document.getElementById("correct").innerText)) + numIncorrect}!</p>
         <p>Well done!</p>
         <p>That’s some going,</p>
         <p>but there’s no time to rest!</p>
@@ -175,14 +184,14 @@ function startTimer() {
     </div>`;
   }
 
-  function correctMessage() { 
-    gameContainer.innerHTML =
-    `<div class="message-container container-fluid">
-      <div class="correct-message jumbotron text-center">
-        <p>Correct!</p>
-      </div>
-    </div>`
-  }
+  // function correctMessage() { 
+  //   gameContainer.innerHTML =
+  //   `<div class="message-container container-fluid">
+  //     <div class="correct-message jumbotron text-center">
+  //       <p>Correct!</p>
+  //     </div>
+  //   </div>`
+  // }
 
 
 
