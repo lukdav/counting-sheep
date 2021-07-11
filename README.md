@@ -57,29 +57,47 @@ Game End
 
 ### Existing Features
 
-Every page will have the same navigation bar at the top and footer at the bottom.
+Layout
+- The background features hills in the far distance, with a field in the foreground which acts as the game area.
+- The game area is surrounded by a a brown box which acts as a 'fence'.
+- Below the game area is the score area - a timer on the left, with an answer-input/submit button on the right and finally a score section below with both correct and incorrect indicators.
 
-The Home page:
-- A welcome promoting the new album. Links will allow users to download the album from external sites.
-- 'Reviews' section will give an insight into the reception from professional journalists.
-- A 'Tour' Schedule will allow users to view dates and locations of upcoming live shows with a link to buy tickets from an extarnal site. 
+The Landing/Welcome Screen:
+- The Timer is frozen on the time limit (two minutes).
+- The answer-input/submit button is disabled.
+- The correct and incorrect scores both show zero. 
+- A welcome message appears in the game area.
+- The welcome message gives a light hearted, comical context to the user and explains the rules of the game, with a button to start the game.
 
-The About page:
-- Will include a brief history of the band, from its origins to its present progress/successes.
-- Has a picture of the band together to give the user an idea of the band's line-up.
-- Each member of the band will have a short biography to explain their role in the band, their history and influences.
-- Each band member will have a profile picture to accompany the biography to give the user further information.
+Game Start:
+- The welcome message dissapears upon pressing the start button.
+- A random number of sheep, in random positions, will appear in the brown box.
+- The timer begins to countdown from 2 minutes.
+- The answer-input and submit button are activated.
+- The answer-input will have focus.
 
-The Media page:
-- Will include a selection of photographs from live shows to give the user a feel of the band's level of performance.
-- Will also include two videos of live performances to give the user direct access to content.
+Mid Game:
+- Users must count the sheep, then type how many there are in the answer-input and click submit or hit enter.
+- The game determines if the answer was correct or incorrect and a relevant message appears briefly; either "Correct!" or "Wrong!".
+- If correct, the number of sheep counted is incremented on to the "Correct" score value.
+- If incorrect the amount the user was out by is added to the "Incorrect" score value and the "Correct" score is increased by the offset value (i.e. the correct number of sheep minus the number of sheep the user was off by).
+- After submit is pressed and all scores are calculated, the game area and answer-input is cleared and a new random number of sheep in random positions appear.
+- The game repeats round after round until the timer reaches zero. 
 
-The Contact page:
-- Will provide a method of contacting the band and its management via a contact form.
+Game End:
+- When the timer reaches zero the game ends.
+- The correct and incorrect scores are frozen at the final score obtained.
+- The answer-input and submit button is disabled. 
+- The game area and answer-input fields are cleared.
+- An "Time's up!" message appears to tell the user the total number of sheep counted from a possible maximum, with more text to encourage the user to restart the game.
+- The "Time's up!" message includes a button to restart the game.
 
-The Sign Up button:
-- Will appear on larger devices to encourage users to become a member to enhance the user experience by providing exclusive content.
-- The sign up form will open in a modal.
+Restart game:
+- The game area is cleared (the "Time's up!" message dissapears).
+- The timer restarts from two minutes.
+- The answer-input and submit button are reactivated.
+- The correct and incorrect score values are zeroed.
+- A new random number of sheep appear and so begins a new game.
 
 ### Yet to be Implemented
 
@@ -117,7 +135,8 @@ Sign-up:
 - CSS3 (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML
 - [JavaScript](https://www.javascript.com/) is a high-level programming language and has been used to add interactivity.
 - [jQuery Core 3.6.0](https://code.jquery.com/) was used to provide added efficiency to the JavaScript.
-
+- [DLPNG](https://dlpng.com) was used to get a png.
+- [subpng](https://www.subpng.com/) was also used to get some png images.
 
 ---
 
