@@ -163,7 +163,6 @@ index.html
 style.css
 ![style.css](assets/testing/css-val.png)
 
-3. JavaScript testing
 
 3. Lighthouse (Dev Tools)
 A report was conducted for a mobile device, and returned the following scores:
@@ -226,8 +225,8 @@ Please note, the modal still requires verification for 'repeated password' to be
 
 ## Bugs
 
-- The heading 'blur' (box-shadow) could not be styled using an id or class in the style.css file. The problem was resolved using a direct style on the element in the html files, however this is not ideal and will be further investigated.
-- A small white gap appears below the footer on screen sizes smaller than 992px. This is believed to be due to the responsive adjustment of the contents of the footer but it was unable to be resolved before submition. This will be further investigated. 
+- The sheep are often rendered behind/in-front of each other. On smaller screens this can be an issue.
+- The href atribute initially put on the start button to align the users screen with the game-area would not align to the section proposed but to the bottom of the screen. Even though an error was revealed as the href must be on an anchor element, this could have been altered, however the href attribute was removed due to the screen viewpoint moving to the bottom, cutting off some of the game area on smaller devices.
 
 ## Deployment
 
